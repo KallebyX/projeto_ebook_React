@@ -11,6 +11,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --scale-factor: 1;
+ 
 }
 
 a {
@@ -26,8 +28,15 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* min-width: 112px; */
+  /* min-height: 100vh; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  /* height: 401px; */
+  /* width: 200px; */
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {

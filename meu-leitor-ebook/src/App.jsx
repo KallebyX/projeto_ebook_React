@@ -1,12 +1,12 @@
 // src/App.jsx
 import React from 'react';
-import EbookReader from './components/EbookReader';
+import PdfReader from './components/PdfReader';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <EbookReader url="/assets/ebook.epub" />
+      <PdfReader file="/assets/ebook.pdf" />
     </div>
   );
 }

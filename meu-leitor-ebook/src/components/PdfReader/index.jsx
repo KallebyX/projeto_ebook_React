@@ -7,19 +7,18 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const PdfReader = ({ file }) => {
   const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1); // Adiciona estado para a página atual
+  const [pageNumber, setPageNumber] = useState(1);
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
-    setPageNumber(1); // Inicia na primeira página
   }
 
   const goToPrevPage = () => {
-    setPageNumber(pageNumber - 1);
+    setPageNumber(prevPageNumber => prevPageNumber - 1);
   };
 
   const goToNextPage = () => {
-    setPageNumber(pageNumber + 1);
+    setPageNumber(prevPageNumber => prevPageNumber + 1);
   };
 
   return (
@@ -30,7 +29,7 @@ const PdfReader = ({ file }) => {
       >
         <Page pageNumber={pageNumber} />
       </Document>
-      <div>
+      <div className="button-container">
         <button disabled={pageNumber <= 1} onClick={goToPrevPage}>Anterior</button>
         <button disabled={pageNumber >= numPages} onClick={goToNextPage}>Próxima</button>
       </div>
