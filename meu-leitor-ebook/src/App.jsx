@@ -1,5 +1,7 @@
+// src/App.jsx
 import React from 'react';
-import EbookReader from './EbookReader';
+import EbookReader from './components/EbookReader';
+import './App.css';
 
 function App() {
   return (
